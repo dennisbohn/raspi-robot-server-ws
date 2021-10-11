@@ -1,0 +1,22 @@
+{
+  "name": "raspi-robot-ws",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dennisbohn/raspi-robot-ws.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dennisbohn/raspi-robot-ws/issues"
+  },
+  "homepage": "https://github.com/dennisbohn/raspi-robot-ws#readme",
+  "dependencies": {
+    "socket.io": "^4.2.0"
+  }
+}
