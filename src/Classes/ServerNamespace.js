@@ -62,7 +62,8 @@ class ServerNamespace {
     });
 
     // Save config
-    socket.on("saveConfiguration", (ackFn) => {
+    socket.on("saveConfiguration", (namespaceConfig, ackFn) => {
+      this.namespaceConfig = namespaceConfig;
       this.config.namespaces[this.namespace] = this.namespaceConfig;
       fs.writeFileSync("./config.json", JSON.stringify(this.config));
       ackFn(true);
