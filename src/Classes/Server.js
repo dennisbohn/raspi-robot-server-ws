@@ -2,8 +2,8 @@ const io = require("socket.io");
 const ServerNamespace = require("./ServerNamespace");
 
 class Server {
-  constructor(options) {
-    this.options = options;
+  constructor(config) {
+    this.config = config;
     this.startChunks = {};
     this.io = io(3001, {
       cors: {
@@ -14,12 +14,8 @@ class Server {
   }
 
   createNamespaces() {
-    Object.keys(this.options.namespaces).forEach((namespace) => {
-      new ServerNamespace(
-        namespace,
-        this.io,
-        this.options.namespaces[namespace]
-      );
+    Object.keys(this.config.namespaces).forEach((namespace) => {
+      new ServerNamespace(namespace, this.io, this.config);
     });
   }
 }

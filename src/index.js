@@ -1,15 +1,7 @@
-const options = {
-  server: {
-    port: 3001,
-  },
-  namespaces: {
-    uturm: {
-      authKey: "thisIsMyAuthKey",
-    },
-  },
-};
-
+const fs = require("fs");
 const Server = require("./Classes/Server.js");
 
 // Start server
-const server = new Server(options);
+const config = JSON.parse(fs.readFileSync(__dirname + "/../config.json"));
+console.log(config);
+const server = new Server(config);
